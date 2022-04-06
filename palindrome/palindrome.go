@@ -2,7 +2,7 @@ package palindrome
 
 func isPalindrome(x int) bool {
 
-	if x < 0 && int(x/10) <= 0 {
+	if x < 0 || (x % 10 == 0 && x != 0 ) {
 		return false
 	}
 
@@ -22,10 +22,6 @@ func isPalindrome(x int) bool {
 
 	lenX := len(sl)
 	maxIndex := lenX - 1
-
-	if lenX == 1 {
-		return true
-	}
 
 	if lenX%2 == 0 {
 
