@@ -1,4 +1,4 @@
-9. Palindrome Number
+9.Palindrome Number
 ===
 
 Given an integer x, return true if x is palindrome integer.
