@@ -1,36 +1,48 @@
 package lswrc
 
+// Sliding Window
 func lengthOfLongestSubstring(s string) int {
 
-	m := make(map[byte]int)
-	res := 0
-	left, right := 0, 0
+	n := len(s)
+	result := 0
+	start := 0
 
-	for right < len(s) {
-		rch := s[right]
+	charIndexMap := make(map[uint8]int)
 
-		if count, ok := m[rch]; !ok || (ok && count == 0) {
-			m[rch] = 1
+    //起點終點都由最左動態至最右
+	for end := 0; end < n; end++ {
 
-			if right-left+1 > res {
-				res = right - left + 1
+		// 檢查是否已出現重複
+		duplicateIndex, isDuplicate := charIndexMap[s[end]]
+
+		if isDuplicate {
+			// 更新當前結果
+			result = max(result, end-start)
+
+			// 清除已出現的部分
+			for i := start; i <= duplicateIndex; i++ {
+				delete(charIndexMap, s[i])
 			}
 
-			// fmt.Println("right", right, "rch", string(rch))
-			right++
-
-			continue
+			// 移動起點至我們發現重複的下一個字元
+			start = duplicateIndex + 1
 		}
 
-		lch := s[left]
+		// 記錄不重複結果
+		charIndexMap[s[end]] = end
+	}
+	// Update the result for last window
+	// For a input like "abc" the execution will not enter the above if statement for checking duplicates
+	result = max(result, n-start)
 
-		left++
+	return result
+}
 
-		if count, ok := m[lch]; ok {
-			m[lch] = count - 1
-			// fmt.Println("left", left, "lch", string(lch))
-		}
+func max(a, b int) int {
+
+	if a > b {
+		return a
 	}
 
-	return res
+	return b
 }
