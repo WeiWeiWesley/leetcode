@@ -2,62 +2,33 @@ package reverseinterger
 
 import (
 	"math"
-	"sort"
 )
 
+//善用餘數
 func reverse(x int) int {
 
-	//-231 <= x <= 231 - 1
-	if x <= int(math.Pow(-2, 31)) || x >= int(math.Pow(2, 31)-1) {
-		return 0
-	}
+	sign := 1
 
-	carry := 1
-	multiple := 0
-	cArr := []int{}
-	tag := false
-
+	//負數判斷
 	if x < 0 {
-		tag = true
-		x *= -1
+		sign = -1
+		x = sign * x
 	}
 
-	//找出最大位數
-	for {
-		carry = int(x / int(math.Pow10(multiple)))
+	var result int
+	for x > 0 {
+		// 取出最後一位，並將前次結果乘上倍數
+		result = result*10 + x%10
 
-		//已達最大位數
-		if carry == 0 {
-			break
+		// 題目範圍限制
+		if sign*result >= math.MaxInt32 || sign*result <= math.MinInt32 {
+			return 0
 		}
 
-		// fmt.Println("multiple", multiple, "carry", carry)
-
-		cArr = append(cArr, carry)
-
-		multiple++
+		// 將已加入新結果的部分移至小數點後
+		x = x / 10
 	}
 
-	//reverse
-	sort.Ints(cArr)
-
-	res := 0
-
-	for i, v := range cArr {
-		//留尾數
-		remainder := v % 10
-		//乘上位數
-		res += remainder * int(math.Pow10(i))
-	}
-
-	if tag {
-		res *= -1
-	}
-
-	//-231 <= x <= 231 - 1
-	if res <= int(math.Pow(-2, 31)) || res >= int(math.Pow(2, 31)-1) {
-		return 0
-	}
-
-	return res
+	// + or - 校正
+	return sign * result
 }
