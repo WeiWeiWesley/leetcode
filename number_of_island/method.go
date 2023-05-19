@@ -1,6 +1,6 @@
 package numberofisland
 
-//邊界探索 DFS
+//邊界探索 DFS(持續朝某方向前進，避免重複)
 func numIslands(grid [][]byte) int {
     if len(grid) == 0 {
         return 0
