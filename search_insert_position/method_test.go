@@ -37,6 +37,14 @@ func Test_searchInsert(t *testing.T) {
 			},
 			want: 4,
 		},
+		{
+			name: "case 4",
+			args: args{
+				nums:   []int{2, 3, 5, 6},
+				target: 1,
+			},
+			want: 0,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
