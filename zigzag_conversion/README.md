@@ -1,6 +1,9 @@
-6.Zigzag Conversion
-===
+# Zigzag Conversion
 
+## 題目連結
+https://leetcode.com/problems/zigzag-conversion/
+
+## 題目描述
 The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
 
 ```
@@ -11,19 +14,17 @@ Y   I   R
 
 And then read line by line: "PAHNAPLSIIGYIR"
 
-Write the code that will take a string and make this conversion given a number of rows:
+Write the code that will take a string and make this conversion given a number of rows.
 
-```
-string convert(string s, int numRows);
-```
+## 範例
 
-Example 1:
+### Example 1:
 ```
 Input: s = "PAYPALISHIRING", numRows = 3
 Output: "PAHNAPLSIIGYIR"
 ```
 
-Example 2:
+### Example 2:
 ```
 Input: s = "PAYPALISHIRING", numRows = 4
 Output: "PINALSIGYAHRPI"
@@ -34,14 +35,14 @@ Y A   H R
 P     I
 ```
 
-Example 3:
+### Example 3:
 ```
 Input: s = "A", numRows = 1
 Output: "A"
 ```
 
-Constraints:
+## 難度
+Medium
 
-- 1 <= s.length <= 1000
-- s consists of English letters (lower-case and upper-case), ',' and '.'.
-- 1 <= numRows <= 1000
+## 標籤
+String
