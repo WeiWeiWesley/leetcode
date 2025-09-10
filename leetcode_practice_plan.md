@@ -181,8 +181,8 @@
 - [x] Two Sum
 - [x] Remove Element
 - [x] Remove Duplicates from Sorted Array
-- [ ] Remove Duplicates from Sorted Array II
-- [ ] Length of Last Word
+- [x] Remove Duplicates from Sorted Array II
+- [x] Length of Last Word
 - [ ] Longest Common Prefix
 - [ ] Valid Palindrome
 - [ ] Palindrome Number
