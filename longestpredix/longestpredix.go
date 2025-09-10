@@ -1,32 +1,36 @@
 package longestpredix
 
 func longestCommonPrefix(strs []string) string {
-
+	// 邊界條件：如果輸入為空，直接返回空字串
 	if len(strs) == 0 {
 		return ""
 	}
 
-	longest := ""
+	// 以第一個字串作為初始前綴（最長可能的前綴）
+	prefix := strs[0]
 
-	for i := 0; i <= len(strs[0]); i++ {
+	// 從最長的前綴開始，逐步縮短
+	for len(prefix) > 0 {
+		allMatch := true
 
-		tmp := strs[0][0:i]
-		check := 0
-
-		for _, v := range strs {
-			if i > len(v) {
-				break
-			}
-
-			if tmp == v[0:i] {
-				check++
+		// 檢查所有字串是否都有這個前綴
+		for _, str := range strs {
+			// 如果字串長度不足，或者前綴不匹配
+			if len(str) < len(prefix) || str[:len(prefix)] != prefix {
+				allMatch = false
+				break // 一旦發現不匹配，立即跳出
 			}
 		}
 
-		if check == len(strs) {
-			longest = tmp
+		// 如果所有字串都匹配這個前綴，返回結果
+		if allMatch {
+			return prefix
 		}
+
+		// 縮短前綴：移除最後一個字符
+		prefix = prefix[:len(prefix)-1]
 	}
 
-	return longest
+	// 如果沒有找到任何共同前綴，返回空字串
+	return ""
 }

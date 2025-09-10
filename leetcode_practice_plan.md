@@ -183,7 +183,7 @@
 - [x] Remove Duplicates from Sorted Array
 - [x] Remove Duplicates from Sorted Array II
 - [x] Length of Last Word
-- [ ] Longest Common Prefix
+- [x] Longest Common Prefix
 - [ ] Valid Palindrome
 - [ ] Palindrome Number
 - [ ] Reverse Integer
