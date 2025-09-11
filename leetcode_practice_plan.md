@@ -184,7 +184,7 @@
 - [x] Remove Duplicates from Sorted Array II
 - [x] Length of Last Word
 - [x] Longest Common Prefix
-- [ ] Valid Palindrome
+- [x] Valid Palindrome
 - [ ] Palindrome Number
 - [ ] Reverse Integer
 - [ ] String to Integer (atoi)
