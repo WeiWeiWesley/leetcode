@@ -185,8 +185,8 @@
 - [x] Length of Last Word
 - [x] Longest Common Prefix
 - [x] Valid Palindrome
-- [ ] Palindrome Number
-- [ ] Reverse Integer
+- [X] Palindrome Number
+- [X] Reverse Integer
 - [ ] String to Integer (atoi)
 - [ ] Search Insert Position
 - [ ] Find Index of First Occurrence
