@@ -187,7 +187,7 @@
 - [x] Valid Palindrome
 - [X] Palindrome Number
 - [X] Reverse Integer
-- [ ] String to Integer (atoi)
+- [X] String to Integer (atoi)
 - [ ] Search Insert Position
 - [ ] Find Index of First Occurrence
 - [ ] Binary Search
