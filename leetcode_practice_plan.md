@@ -188,7 +188,7 @@
 - [X] Palindrome Number
 - [X] Reverse Integer
 - [X] String to Integer (atoi)
-- [ ] Search Insert Position
+- [X] Search Insert Position
 - [ ] Find Index of First Occurrence
 - [ ] Binary Search
 - [ ] Happy Number

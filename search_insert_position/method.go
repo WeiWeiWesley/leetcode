@@ -1,25 +1,22 @@
 package searchinsertposition
 
-// nums 是排序過陣列，可以使用 Binary Search 加速搜尋
-func searchInsert(nums []int, target int) int {
+// O(log n) 有限制搜尋的時間
+func SearchInsert(nums []int, target int) int {
 	l := 0
 	r := len(nums) - 1
 
-	//Binary Search
 	for l <= r {
-		m := l + (r-l)/2
+		m := l + (r-l)/2 // 尋找中間點
 
-		v := nums[m]
-
-		switch {
-		case v < target:
-			l = m + 1
-		case v > target:
-			r = m - 1
-		default:
-			return m // v==target
+		if target > nums[m] {
+			l = m + 1 // 向右邊區塊尋找，變更左界
+		} else if target < nums[m] {
+			r = m - 1 // 向左邊區塊尋找，變更右界
+		} else {
+			return m // target == nums[m] // 找到相同的數值
 		}
 	}
 
-	return l //目標不在區間內，回傳移動後的結果
+	// 當迴圈結束時，l 就是插入位置
+	return l
 }
