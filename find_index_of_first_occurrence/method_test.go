@@ -45,6 +45,30 @@ func Test_strStr(t *testing.T) {
 			},
 			want: -1,
 		},
+		{
+			name: "case 5 - empty needle",
+			args: args{
+				haystack: "hello",
+				needle:   "",
+			},
+			want: 0,
+		},
+		{
+			name: "case 6 - needle equals haystack",
+			args: args{
+				haystack: "hello",
+				needle:   "hello",
+			},
+			want: 0,
+		},
+		{
+			name: "case 7 - single character match",
+			args: args{
+				haystack: "hello",
+				needle:   "l",
+			},
+			want: 2,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

@@ -189,7 +189,7 @@
 - [X] Reverse Integer
 - [X] String to Integer (atoi)
 - [X] Search Insert Position
-- [ ] Find Index of First Occurrence
+- [X] Find Index of First Occurrence
 - [ ] Binary Search
 - [ ] Happy Number
 - [ ] Summary Ranges
