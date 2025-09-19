@@ -190,7 +190,7 @@
 - [X] String to Integer (atoi)
 - [X] Search Insert Position
 - [X] Find Index of First Occurrence
-- [ ] Binary Search
+- [X] Binary Search
 - [ ] Happy Number
 - [ ] Summary Ranges
 - [ ] 3Sum
