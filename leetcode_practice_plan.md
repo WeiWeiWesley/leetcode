@@ -191,7 +191,7 @@
 - [X] Search Insert Position
 - [X] Find Index of First Occurrence
 - [X] Binary Search
-- [ ] Happy Number
+- [X] Happy Number
 - [ ] Summary Ranges
 - [ ] 3Sum
 - [ ] Longest Substring Without Repeating Characters
