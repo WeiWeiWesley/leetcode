@@ -4,53 +4,57 @@ import (
 	"sort"
 )
 
-// sort
-// double loop
-// 3 index pointer
+// ThreeSum 找到所有不重複的三元組，使得三個數的和為 0
+// 使用排序 + 雙指針的方法
+// 時間複雜度: O(n²), 空間複雜度: O(1)
 func threeSum(nums []int) [][]int {
-
 	res := [][]int{}
+	n := len(nums)
 
-	n := len(nums)	
+	// 邊界條件：至少需要 3 個元素
+	if n < 3 {
+		return res
+	}
 
-	//排序過可用來避免重複的組合
+	// 1. 先排序陣列，讓重複元素聚集在一起，方便去重
 	sort.Ints(nums)
 
-	//移動最左
-	for indexA := 0; indexA < n-2; indexA++ {
-
-		indexB := indexA + 1
-		indexC := n - 1
-
-		//避免重複的組合(左起)
-		if indexA > 0 && nums[indexA] == nums[indexA-1] {
+	// 2. 固定第一個數，用雙指針找另外兩個數
+	for i := 0; i < n-2; i++ {
+		// 去重：如果當前數和前一個數相同，跳過
+		if i > 0 && nums[i] == nums[i-1] {
 			continue
 		}
 
-		//移動內層左右
-		for indexB < indexC {
+		left := i + 1  // 左指針
+		right := n - 1 // 右指針
 
-			sum := nums[indexA] + nums[indexB] + nums[indexC]
-
-			//避免重複的組合(右起)
-			if indexC != n-1 && nums[indexC] == nums[indexC+1] {
-				indexC--
-				continue
-			}
+		// 3. 雙指針尋找另外兩個數
+		for left < right {
+			sum := nums[i] + nums[left] + nums[right]
 
 			if sum == 0 {
-				res = append(res, []int{nums[indexA], nums[indexB], nums[indexC]})
+				// 找到符合條件的三元組
+				res = append(res, []int{nums[i], nums[left], nums[right]})
 
-				indexC--
-				continue
+				// 去重：跳過相同的左指針值
+				for left < right && nums[left] == nums[left+1] {
+					left++
+				}
+				// 去重：跳過相同的右指針值
+				for left < right && nums[right] == nums[right-1] {
+					right--
+				}
+
+				left++
+				right--
+			} else if sum < 0 {
+				// 總和太小，左指針向右移動（增加總和）
+				left++
+			} else {
+				// 總和太大，右指針向左移動（減少總和）
+				right--
 			}
-
-			if sum > 0 {
-				indexC--
-				continue
-			}
-
-			indexB++
 		}
 	}
 

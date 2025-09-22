@@ -192,7 +192,7 @@
 - [X] Find Index of First Occurrence
 - [X] Binary Search
 - [X] Happy Number
-- [ ] Summary Ranges
+- [X] Summary Ranges
 - [ ] 3Sum
 - [ ] Longest Substring Without Repeating Characters
 - [ ] Longest Palindromic Substring
