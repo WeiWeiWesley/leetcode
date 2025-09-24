@@ -193,8 +193,8 @@
 - [X] Binary Search
 - [X] Happy Number
 - [X] Summary Ranges
-- [ ] 3Sum
-- [ ] Longest Substring Without Repeating Characters
+- [X] 3Sum
+- [X] Longest Substring Without Repeating Characters
 - [ ] Longest Palindromic Substring
 - [ ] Container With Most Water
 - [ ] Merge Sorted Array
