@@ -195,7 +195,7 @@
 - [X] Summary Ranges
 - [X] 3Sum
 - [X] Longest Substring Without Repeating Characters
-- [ ] Longest Palindromic Substring
+- [X] Longest Palindromic Substring
 - [ ] Container With Most Water
 - [ ] Merge Sorted Array
 - [ ] Min Size Subarray Sum
