@@ -1,26 +1,34 @@
 package mergesortedarray
 
+// 解題思路：雙指標從後往前填充
+// 1. 利用 nums1 後面的預留空間，從後往前填充可避免覆蓋未處理的元素
+// 2. 使用三個指標：p1(nums1尾)、p2(nums2尾)、p(填充位置)
+// 3. 比較兩陣列尾端元素，將較大值放到 nums1[p]，並移動對應指標
+// 4. 若 nums2 有剩餘，直接複製（已確保比已填充元素小）
+// 5. 若 nums1 有剩餘，不需處理（已在正確位置）
+// 時間複雜度：O(m+n)，空間複雜度：O(1)
 func merge(nums1 []int, m int, nums2 []int, n int) {
-	// array tail 的 pointer
-	p1 := m - 1
-	p2 := n - 1
+	// 初始化三個指標
+	p1 := m - 1    // nums1 有效元素的最後一個位置
+	p2 := n - 1    // nums2 的最後一個位置
+	p := m + n - 1 // nums1 應該填充的位置（從最後開始）
 
-	// 合併後的 tail pointer
-	p := m + n - 1
-
-	// 由後向前比较 nums1 和 nums2 元素，將較大的 val 取代在 num1 的位置
+	// 從後往前比較，將較大的元素放到 nums1 的尾部
+	// 條件：兩個陣列都還有元素時才比較（確保不會索引越界）
 	for p1 >= 0 && p2 >= 0 {
-		if nums1[p1] > nums2[p2] {
-			nums1[p] = nums1[p1]
-			p1--
+		if nums2[p2] > nums1[p1] {
+			nums1[p] = nums2[p2] // nums2 的元素較大，放入當前位置
+			p2--                 // nums2 指標前移
 		} else {
-			nums1[p] = nums2[p2]
-			p2--
+			nums1[p] = nums1[p1] // nums1 的元素較大或相等，放入當前位置
+			p1--                 // nums1 指標前移
 		}
-		p--
+		p-- // 填充位置前移
 	}
 
-	// nums2 的值可能沒取完，需把剩餘 val 加到 num1
+	// 處理 nums2 剩餘元素
+	// 如果 nums2 還有剩餘，這些元素必定小於已填充的值，直接複製即可
+	// 如果 nums1 有剩餘，已在正確位置，不需處理
 	for p2 >= 0 {
 		nums1[p] = nums2[p2]
 		p2--

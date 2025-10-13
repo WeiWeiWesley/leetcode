@@ -196,8 +196,8 @@
 - [X] 3Sum
 - [X] Longest Substring Without Repeating Characters
 - [X] Longest Palindromic Substring
-- [ ] Container With Most Water
-- [ ] Merge Sorted Array
+- [X] Container With Most Water
+- [X] Merge Sorted Array
 - [ ] Min Size Subarray Sum
 - [ ] Zigzag Conversion
 - [ ] Bulls and Cows
