@@ -198,7 +198,7 @@
 - [X] Longest Palindromic Substring
 - [X] Container With Most Water
 - [X] Merge Sorted Array
-- [ ] Min Size Subarray Sum
+- [X] Min Size Subarray Sum
 - [ ] Zigzag Conversion
 - [ ] Bulls and Cows
 - [ ] Reverse Linked List
